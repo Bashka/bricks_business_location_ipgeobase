@@ -112,6 +112,7 @@ class CurlResolver implements ResolverInterface{
     curl_setopt($ch, CURLOPT_HEADER, false);
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $requestXml->saveXML());
+    curl_setopt($ch, CURLOPT_TIMEOUT, 2);
 
     $responseXml = curl_exec($ch);
 
